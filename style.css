@@ -1,5 +1,6 @@
 body {
     background-color: #1F2937;
+    
 }
 
 h1 {
@@ -8,7 +9,7 @@ h1 {
     font-weight: 800;
     font-size: 40px;
     font-weight: bolder;
-
+    margin-top: 115px;
 }
 
 .randpass {
@@ -27,6 +28,7 @@ h1 {
 }
 
 .headertxt {
+
 }
 
 .passbtn {
@@ -44,11 +46,24 @@ h1 {
 }
 
 .passwordblank {
-    color: #273549;
+   background-color: #273549;
+    min-width: 211px;
+    min-height: 39px;
+    margin-top: 35px;
+    border-radius: 6px;
+    margin-right: 24px;
+   /** margin: 35px 24px 0px 24px;**/
 }
 
 .passctn {
     display: flex;
-    flex-direction: row;
-    border-top: 10px #2F3E53;
+    border-top: 2px solid #2F3E53;
+    min-width: auto;
+}
+
+
+.mainctn {
+    display: flex;
+    flex-direction: column;
+    margin-left: 52px;
 }
