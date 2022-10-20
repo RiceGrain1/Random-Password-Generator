@@ -27,9 +27,7 @@ h1 {
 
 }
 
-.headertxt {
 
-}
 
 .passbtn {
    color: white;
@@ -51,14 +49,12 @@ h1 {
     min-height: 39px;
     margin-top: 35px;
     border-radius: 6px;
-    margin-right: 24px;
+    width: auto;
    /** margin: 35px 24px 0px 24px;**/
 }
 
 .passctn {
     display: flex;
-    border-top: 2px solid #2F3E53;
-    min-width: auto;
 }
 
 
@@ -66,4 +62,15 @@ h1 {
     display: flex;
     flex-direction: column;
     margin-left: 52px;
+}
+
+.borderwrapper {
+    border-top: 2px solid #2F3E53;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#passblank1 {
+    margin-right: 24px;
 }
