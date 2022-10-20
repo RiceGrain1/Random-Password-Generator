@@ -1,0 +1,43 @@
+body {
+    background-color: #1F2937;
+}
+
+h1 {
+    color: white;
+    font-family: 'Inter';
+    font-weight: 800;
+    font-size: 40px;
+    font-weight: bolder;
+
+}
+
+.randpass {
+    color: #4ADF86;
+    display: block;
+}
+
+.h1footer {
+    color:#D5D4D8;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Inter';
+
+}
+
+.headertxt {
+    display: flex;
+    flex-direction: column;
+}
+
+.passbtn {
+   color: white;
+    background-color:#10B981;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter';
+    border-color: transparent;
+    width: fit-content;
+    height: 42px;
+
+}
