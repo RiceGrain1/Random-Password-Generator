@@ -43,6 +43,12 @@ h1 {
 
 }
 
+.passbtn:hover {
+    background-color: #0a7752;
+    cursor: pointer;
+    transition: 100ms;
+}
+
 .passwordblank {
    background-color: #273549;
     min-width: 211px;
@@ -50,6 +56,13 @@ h1 {
     margin-top: 35px;
     border-radius: 6px;
     width: auto;
+    color: #55F991;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    font-weight: 500;
+    size: 16px;
    /** margin: 35px 24px 0px 24px;**/
 }
 
@@ -71,6 +84,6 @@ h1 {
     flex-wrap: wrap;
 }
 
-#passblank1 {
+#passwordblank1 {
     margin-right: 24px;
 }
