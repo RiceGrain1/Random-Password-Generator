@@ -63,6 +63,7 @@ h1 {
     font-family: 'Inter';
     font-weight: 500;
     size: 16px;
+    user-select: none;
    /** margin: 35px 24px 0px 24px;**/
 }
 

@@ -2,31 +2,93 @@ const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
     "/"
 ];
 
-let genPassBtn = document.getElementById("generationbtn")
+const genPassBtn = document.getElementById("generationbtn")
 const passwordBlankOne = document.getElementById("passwordblank1")
 const passwordBlankTwo = document.getElementById("passwordblank2")
 
-genPassBtn.addEventListener("click", setPass1)
 
 
 let randoCha = []
-let test = ""
+let pass1 = ""
+let pass2 = ""
 
-function randomCharacters() {
-    for (let i = 0; i < 15; i++) {
-        let randomNumber = Math.floor(Math.random() * characters.length)
-        test += (characters[randomNumber])
-        console.log(characters[randomNumber])
+function randomCharacters(pass) {
+    if (pass === pass1) {
+        for (let i = 0; i < 15; i++) {
+            let randomNumber = Math.floor(Math.random() * characters.length)
+            pass1 += (characters[randomNumber])
+            console.log(characters[randomNumber])
+        }
+        passwordBlankOne.textContent = pass1
+        pass1 = " "
+    } else if (pass === pass2) {
+        for (let i = 0; i < 15; i++) {
+            let randomNumber = Math.floor(Math.random() * characters.length)
+            pass2 += (characters[randomNumber])
+            console.log(characters[randomNumber])
+        }      
+        passwordBlankTwo.textContent = pass2
+        pass2 = " "
+    }
+    else {
+        console.log("you broke something")
     }
 }
 
 
+genPassBtn.addEventListener("click", randomCharacters(pass1))
+genPassBtn.addEventListener("click", randomCharacters(pass2))
 
 
 
 
-function setPass1() {
-    randomCharacters()
-    passwordBlankOne.textContent = test
-    test = " "
+
+
+
+
+
+
+
+
+/* WIP code to copy text from a text box on click look her for reference: 
+https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+function myFunction() {
+    // Get the text field
+    var copyText = passwordBlankOne
+
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+
+    // Alert the copied text
+    alert("Copied the text: " + copyText.value);
 }
+
+passwordBlankOne.addEventListener("click", myFunction)
+*/
+
+/* try this solution to copy text: 
+https://discord.com/channels/684009642984341525/1025753909358239744/1025761560662130739
+
+function copyit() {
+
+  // the conent of the passwordOneEl
+  const textToCopy = passwordOneEl.textContent; 
+
+  // note that writing to the clipboard is asynchronous
+  // and returns a  promise.  If the promise succeeds it
+  // calls the first function, if the promise
+  // fails it calls the second function
+  navigator.clipboard.writeText(textToCopy).then( 
+    function () { // this is the succeed case
+      console.log('Async: Copying to clipboard was successful!');
+    },
+    function (err) { // this is the fail case
+      console.error('Async: Could not copy text: ', err);
+    }
+  );
+}
+*/
