@@ -26,29 +26,34 @@ function randomCharacters(pass) {
             let randomNumber = Math.floor(Math.random() * characters.length)
             pass2 += (characters[randomNumber])
             console.log(characters[randomNumber])
-        }      
+        }
         passwordBlankTwo.textContent = pass2
         pass2 = " "
-    }
-    else {
+    } else {
         console.log("you broke something")
     }
 }
 
 
-genPassBtn.addEventListener("click", randomCharacters(pass1))
-genPassBtn.addEventListener("click", randomCharacters(pass2))
+genPassBtn.addEventListener("click", () => {
+    randomCharacters(pass1)
+    randomCharacters(pass2)
+})
 
+/*From Async Clipboard API sectionhttps://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript?noredirect=1&lq=1
+ */
+function CopyDivToClipboard(specifiedBlank) {
+    console.log("copy function has been invoked")
+    navigator.clipboard.writeText(specifiedBlank.textContent).then
+}
 
+passwordBlankOne.addEventListener("click", () => {
+    CopyDivToClipboard(passwordBlankOne)
+})
 
-
-
-
-
-
-
-
-
+passwordBlankTwo.addEventListener("click", () => {
+    CopyDivToClipboard(passwordBlankTwo)
+})
 
 /* WIP code to copy text from a text box on click look her for reference: 
 https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
