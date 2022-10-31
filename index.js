@@ -6,12 +6,12 @@ const genPassBtn = document.getElementById("generationbtn")
 const passwordBlankOne = document.getElementById("passwordblank1")
 const passwordBlankTwo = document.getElementById("passwordblank2")
 
-
-
 let randoCha = []
 let pass1 = ""
 let pass2 = ""
 
+
+/*pass1 = " " and pass2 = "  " have to be different values in order for the if statement to work properly. It was not working originally because it was checking the value of each variable and they both had the same value of "" initially defined.*/
 function randomCharacters(pass) {
     if (pass === pass1) {
         for (let i = 0; i < 15; i++) {
@@ -20,7 +20,7 @@ function randomCharacters(pass) {
             console.log(characters[randomNumber])
         }
         passwordBlankOne.textContent = pass1
-        pass1 = " "
+        pass1 = "  "
     } else if (pass === pass2) {
         for (let i = 0; i < 15; i++) {
             let randomNumber = Math.floor(Math.random() * characters.length)
@@ -29,11 +29,11 @@ function randomCharacters(pass) {
         }
         passwordBlankTwo.textContent = pass2
         pass2 = " "
+        console.log("second half of if statement run")
     } else {
         console.log("you broke something")
     }
 }
-
 
 genPassBtn.addEventListener("click", () => {
     randomCharacters(pass1)
@@ -54,46 +54,3 @@ passwordBlankOne.addEventListener("click", () => {
 passwordBlankTwo.addEventListener("click", () => {
     CopyDivToClipboard(passwordBlankTwo)
 })
-
-/* WIP code to copy text from a text box on click look her for reference: 
-https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
-function myFunction() {
-    // Get the text field
-    var copyText = passwordBlankOne
-
-    // Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
-
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value);
-
-    // Alert the copied text
-    alert("Copied the text: " + copyText.value);
-}
-
-passwordBlankOne.addEventListener("click", myFunction)
-*/
-
-/* try this solution to copy text: 
-https://discord.com/channels/684009642984341525/1025753909358239744/1025761560662130739
-
-function copyit() {
-
-  // the conent of the passwordOneEl
-  const textToCopy = passwordOneEl.textContent; 
-
-  // note that writing to the clipboard is asynchronous
-  // and returns a  promise.  If the promise succeeds it
-  // calls the first function, if the promise
-  // fails it calls the second function
-  navigator.clipboard.writeText(textToCopy).then( 
-    function () { // this is the succeed case
-      console.log('Async: Copying to clipboard was successful!');
-    },
-    function (err) { // this is the fail case
-      console.error('Async: Could not copy text: ', err);
-    }
-  );
-}
-*/
