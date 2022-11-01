@@ -5,11 +5,11 @@ const characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 const genPassBtn = document.getElementById("generationbtn")
 const passwordBlankOne = document.getElementById("passwordblank1")
 const passwordBlankTwo = document.getElementById("passwordblank2")
+const customValueBox = document.getElementById("customvalue")
 
 let randoCha = []
 let pass1 = ""
 let pass2 = ""
-
 
 /*pass1 = " " and pass2 = "  " have to be different values in order for the if statement to work properly. It was not working originally because it was checking the value of each variable and they both had the same value of "" initially defined.*/
 function randomCharacters(pass) {
@@ -29,7 +29,7 @@ function randomCharacters(pass) {
         }
     } else if (pass === pass2) {
         let customValue = document.getElementById("customvalue").value
-        if (customValue <= 15 || customValue < 1) {
+        if (customValue <= 15 && customValue > 1) {
             for (let i = 0; i < customValue; i++) {
                 let randomNumber = Math.floor(Math.random() * characters.length)
                 pass2 += (characters[randomNumber])
@@ -59,8 +59,10 @@ function CopyDivToClipboard(specifiedBlank) {
 
 passwordBlankOne.addEventListener("click", () => {
     CopyDivToClipboard(passwordBlankOne)
+    alert("Copied to clipboard!")
 })
 
 passwordBlankTwo.addEventListener("click", () => {
     CopyDivToClipboard(passwordBlankTwo)
+    alert("Copied to clipboard!")
 })
