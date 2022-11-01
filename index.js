@@ -14,21 +14,31 @@ let pass2 = ""
 /*pass1 = " " and pass2 = "  " have to be different values in order for the if statement to work properly. It was not working originally because it was checking the value of each variable and they both had the same value of "" initially defined.*/
 function randomCharacters(pass) {
     if (pass === pass1) {
-        for (let i = 0; i < 15; i++) {
-            let randomNumber = Math.floor(Math.random() * characters.length)
-            pass1 += (characters[randomNumber])
-            console.log(characters[randomNumber])
+        let customValue = document.getElementById("customvalue").value
+        if (customValue <= 15 && customValue > 1) {
+            for (let i = 0; i < customValue; i++) {
+                let randomNumber = Math.floor(Math.random() * characters.length)
+                pass1 += (characters[randomNumber])
+                console.log(characters[randomNumber])
+            }
+            passwordBlankOne.textContent = pass1
+            //this one has 1 space
+            pass1 = " "
+        } else {
+            alert("Value is higher than 15 or less than 1.")
         }
-        passwordBlankOne.textContent = pass1
-        pass1 = "  "
     } else if (pass === pass2) {
-        for (let i = 0; i < 15; i++) {
-            let randomNumber = Math.floor(Math.random() * characters.length)
-            pass2 += (characters[randomNumber])
-            console.log(characters[randomNumber])
+        let customValue = document.getElementById("customvalue").value
+        if (customValue <= 15 || customValue < 1) {
+            for (let i = 0; i < customValue; i++) {
+                let randomNumber = Math.floor(Math.random() * characters.length)
+                pass2 += (characters[randomNumber])
+                console.log(characters[randomNumber])
+            }
+            passwordBlankTwo.textContent = pass2
+            //this one has 2 spaces
+            pass2 = "  "
         }
-        passwordBlankTwo.textContent = pass2
-        pass2 = " "
         console.log("second half of if statement run")
     } else {
         console.log("you broke something")
